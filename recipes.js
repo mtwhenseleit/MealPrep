@@ -158,5 +158,52 @@ window.RECIPES = [
       "Add a tiny pinch of salt to each.",
       "Cover and refrigerate overnight, or up to 4 days. Stir before eating—the banana may settle slightly."
     ]
+  },
+  {
+    id: "slow-cooker-chilli-con-carne",
+    name: "Slow cooker chilli con carne",
+    tag: "Dinner",
+    emoji: "🌶️",
+    image: "",
+    portions: 10,
+    storage: "Fridge 3 days, freezer 3 months. Slow cooked on low for 8 hours (or high for 4 hours).",
+    serveWith: "rice or bread (not included in the macros)",
+    ingredients: [
+      { qty: 835, unit: "g", item: "beef mince (5% fat)", aisle: "Meat & fish", kcal: 1211, protein: 200 },
+      { qty: 800, unit: "g", item: "chopped tomatoes canned (2 tins 400g)", aisle: "Cupboard", kcal: 144, protein: 7 },
+      { qty: 500, unit: "g", item: "kidney beans canned, drained", aisle: "Cupboard", kcal: 500, protein: 40 },
+      { qty: 2, unit: "", item: "large white onions", aisle: "Fruit & veg", kcal: 80, protein: 2 },
+      { qty: 2, unit: "", item: "red peppers", aisle: "Fruit & veg", kcal: 62, protein: 2 },
+      { qty: 20, unit: "g", item: "garlic cloves minced", aisle: "Fruit & veg", kcal: 30, protein: 1 },
+      { qty: 100, unit: "g", item: "tomato paste", aisle: "Cupboard", kcal: 82, protein: 3 },
+      { qty: 2, unit: "", item: "beef stock cubes", aisle: "Cupboard", kcal: 6, protein: 1, staple: true },
+      { qty: 250, unit: "ml", item: "water (for stock)", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "dried oregano", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 4, unit: "tsp", item: "dried coriander", aisle: "Cupboard", kcal: 12, protein: 0, staple: true },
+      { qty: 4, unit: "", item: "bay leaves", aisle: "Cupboard", kcal: 3, protein: 0, staple: true },
+      { qty: 3, unit: "tsp", item: "ground cumin", aisle: "Cupboard", kcal: 11, protein: 1, staple: true },
+      { qty: 3, unit: "tsp", item: "hot chilli powder", aisle: "Cupboard", kcal: 9, protein: 0, staple: true },
+      { qty: 2.5, unit: "tsp", item: "sweet paprika", aisle: "Cupboard", kcal: 7, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "smoked paprika", aisle: "Cupboard", kcal: 6, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "Worcestershire sauce", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 1, unit: "tsp", item: "dark brown sugar", aisle: "Cupboard", kcal: 19, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "salt flakes", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 1, unit: "tsp", item: "ground black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 45, unit: "g", item: "plain flour (wheat or corn)", aisle: "Cupboard", kcal: 164, protein: 5, staple: true },
+      { qty: 30, unit: "ml", item: "vegetable oil", aisle: "Cupboard", kcal: 240, protein: 0, staple: true },
+      { qty: 2, unit: "", item: "red chilli peppers (optional for extra heat)", aisle: "Fruit & veg", kcal: 40, protein: 2 }
+    ],
+    method: [
+      "Dice the 2 onions and 2 red peppers. Heat 2 tbsp oil in a large pan over medium-high heat.",
+      "Add the diced onion and pepper, then add 835g beef mince. Stir through well to break up the meat and brown it (5–7 minutes).",
+      "Add the oregano, coriander, cumin, chilli powder, sweet paprika, and smoked paprika to the meat and stir well for 1 minute to toast the spices.",
+      "Transfer the browned meat and vegetables to your slow cooker pot.",
+      "Mince or finely chop the 20g garlic and finely dice the optional red chilli peppers. Add to the slow cooker.",
+      "Stir in 100g tomato paste, 45g flour, 2 tsp salt, 1 tsp black pepper, and 1 tsp brown sugar. Mix well to coat everything.",
+      "Dissolve 2 beef stock cubes in 250ml hot water. Pour this stock over the meat and vegetables.",
+      "Add 800g chopped tomatoes (2 tins), 500g drained kidney beans, 2 tsp Worcestershire sauce, and 4 bay leaves. Stir well, ensuring everything is covered in liquid.",
+      "Cover and cook on low for 8 hours (or on high for 4 hours).",
+      "Stir before serving. Remove bay leaves if you can find them. Serve with rice or bread, garnished with fresh coriander if you like."
+    ]
   }
 ];
