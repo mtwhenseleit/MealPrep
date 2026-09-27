@@ -240,5 +240,39 @@ window.RECIPES = [
       "Stir in 200ml double cream and check the seasoning. Cook for another 10–15 minutes until hot. Remove cinnamon sticks if you can find them.",
       "Ladle between bowls and garnish with 20g fresh coriander. Serve with basmati rice, naan bread, and lime wedges."
     ]
+  },
+  {
+    id: "slow-cooked-beef-ragu",
+    name: "Slow-cooked beef ragu",
+    tag: "Dinner",
+    emoji: "🍝",
+    image: "",
+    portions: 10,
+    storage: "Fridge 3–4 days, freezer 3 months.",
+    serveWith: "rigatoni or pasta of choice, plus grated parmesan (not included in the macros)",
+    ingredients: [
+      { qty: 50, unit: "ml", item: "extra-virgin olive oil", aisle: "Cupboard", kcal: 400, protein: 0, staple: true },
+      { qty: 4, unit: "", item: "brown onions, finely diced", aisle: "Fruit & veg", kcal: 160, protein: 4 },
+      { qty: 500, unit: "g", item: "large carrots, finely diced", aisle: "Fruit & veg", kcal: 205, protein: 5 },
+      { qty: 300, unit: "g", item: "celery stalks, finely diced", aisle: "Fruit & veg", kcal: 48, protein: 2 },
+      { qty: 20, unit: "g", item: "garlic cloves, roughly chopped", aisle: "Fruit & veg", kcal: 30, protein: 1 },
+      { qty: 1700, unit: "g", item: "beef chuck braising steak, cut into 2cm cubes", aisle: "Meat & fish", kcal: 4250, protein: 340 },
+      { qty: 210, unit: "ml", item: "dry red wine", aisle: "Cupboard", kcal: 179, protein: 0, staple: true },
+      { qty: 210, unit: "g", item: "tomato paste", aisle: "Cupboard", kcal: 172, protein: 7 },
+      { qty: 1170, unit: "ml", item: "tomato passata", aisle: "Cupboard", kcal: 211, protein: 11 },
+      { qty: 840, unit: "ml", item: "beef stock", aisle: "Cupboard", kcal: 67, protein: 6, staple: true },
+      { qty: 2, unit: "tsp", item: "sea salt flakes", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 1, unit: "tsp", item: "freshly cracked black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "dried thyme", aisle: "Cupboard", kcal: 6, protein: 0, staple: true },
+      { qty: 4, unit: "", item: "bay leaves", aisle: "Cupboard", kcal: 3, protein: 0, staple: true }
+    ],
+    method: [
+      "Warm 50ml olive oil in a deep heavy-based pan with a lid over medium–high heat.",
+      "Add 4 diced onions, 500g carrots, 300g celery, and 20g garlic. Cook, stirring, for 3–5 minutes until softened.",
+      "Increase heat to high. Add 1700g beef chuck steak cubes and cook, stirring, for 2–3 minutes until sealed all over.",
+      "Combine 210ml dry red wine, 210g tomato paste, 1170ml passata, 840ml beef stock, 2 tsp salt, 1 tsp pepper, 2 tsp thyme, and 4 bay leaves. Stir to combine and bring to a gentle simmer.",
+      "Cover, reduce heat to lowest setting, and cook for 2.5 hours or until beef is tender enough to shred easily with two forks.",
+      "Shred the beef with two forks and stir through the sauce. Serve with your favourite pasta (rigatoni pictured) and grated parmesan."
+    ]
   }
 ];
