@@ -23,61 +23,6 @@
 
 window.RECIPES = [
   {
-    id: "chicken-pesto-pasta",
-    name: "Chicken pesto pasta",
-    tag: "Lunch",
-    emoji: "🍝",
-    image: "",
-    portions: 5,
-    storage: "Fridge 3–4 days, freezer 3 months",
-    ingredients: [
-      { qty: 500, unit: "g", item: "dried penne", aisle: "Cupboard", kcal: 1780, protein: 65 },
-      { qty: 1000, unit: "g", item: "diced chicken breast", aisle: "Meat & fish", kcal: 1060, protein: 240 },
-      { qty: 190, unit: "g", item: "green pesto (1 jar)", aisle: "Cupboard", kcal: 855, protein: 9 },
-      { qty: 50, unit: "g", item: "parmesan", aisle: "Dairy & eggs", kcal: 200, protein: 18 },
-      { qty: 200, unit: "g", item: "baby spinach", aisle: "Fruit & veg", kcal: 50, protein: 6 },
-      { qty: 250, unit: "g", item: "cherry tomatoes", aisle: "Fruit & veg", kcal: 45, protein: 2 },
-      { qty: 1, unit: "tbsp", item: "olive oil", aisle: "Cupboard", kcal: 120, protein: 0, staple: true }
-    ],
-    method: [
-      "Boil the pasta in salted water for 1 minute less than the pack says. Drain, keeping a mug of the water.",
-      "Meanwhile, fry the chicken in the oil over a high heat for 8–10 minutes until cooked through.",
-      "Halve the tomatoes and add them to the chicken for 2 minutes, then stir in the spinach until it wilts.",
-      "Tip the pasta into the pan with the pesto and a splash of the pasta water. Stir until glossy.",
-      "Grate over the parmesan, split into 5 containers and let it cool before the lids go on."
-    ]
-  },
-  {
-    id: "beef-chilli",
-    name: "Beef and bean chilli",
-    tag: "Dinner",
-    emoji: "🌶️",
-    image: "",
-    portions: 6,
-    storage: "Fridge 3 days, freezer 3 months",
-    serveWith: "rice, a jacket potato or wraps (not included in the macros)",
-    ingredients: [
-      { qty: 1000, unit: "g", item: "5% fat beef mince", aisle: "Meat & fish", kcal: 1250, protein: 210 },
-      { qty: 2, unit: "", item: "onions", aisle: "Fruit & veg", kcal: 120, protein: 3 },
-      { qty: 2, unit: "", item: "red peppers", aisle: "Fruit & veg", kcal: 90, protein: 3 },
-      { qty: 3, unit: "", item: "garlic cloves", aisle: "Fruit & veg", kcal: 15, protein: 1 },
-      { qty: 2, unit: "", item: "tins chopped tomatoes (400g)", aisle: "Cupboard", kcal: 170, protein: 9 },
-      { qty: 2, unit: "", item: "tins kidney beans (400g)", aisle: "Cupboard", kcal: 480, protein: 34 },
-      { qty: 2, unit: "tbsp", item: "tomato purée", aisle: "Cupboard", kcal: 25, protein: 1 },
-      { qty: 1, unit: "", item: "beef stock cube", aisle: "Cupboard", kcal: 15, protein: 1, staple: true },
-      { qty: 1, unit: "tbsp", item: "olive oil", aisle: "Cupboard", kcal: 120, protein: 0, staple: true },
-      { qty: 3, unit: "tbsp", item: "chilli powder, cumin and smoked paprika (1 each)", aisle: "Cupboard", kcal: 30, protein: 1, staple: true }
-    ],
-    method: [
-      "Chop the onions, peppers and garlic.",
-      "Brown the mince in a large pan in batches, then set aside.",
-      "Soften the onions and peppers in the oil for 5 minutes, then add the garlic and spices for 1 minute.",
-      "Add the mince, tomatoes, drained beans, purée and crumbled stock cube with 200ml water.",
-      "Simmer with the lid half on for 45 minutes, or slow cook on low for 6–8 hours.",
-      "Cool, portion into 6 containers and freeze what you won't eat in 3 days."
-    ]
-  },
-  {
     id: "classic-overnight-oats",
     name: "Classic overnight oats with chia",
     tag: "Breakfast",
