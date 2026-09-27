@@ -164,7 +164,7 @@ window.RECIPES = [
     name: "Slow cooker chilli con carne",
     tag: "Dinner",
     emoji: "🌶️",
-    image: "",
+    image: "images/slow-cooker-chilli-con-carne.jpg",
     portions: 10,
     storage: "Fridge 3 days, freezer 3 months. Slow cooked on low for 8 hours (or high for 4 hours).",
     serveWith: "rice or bread (not included in the macros)",
