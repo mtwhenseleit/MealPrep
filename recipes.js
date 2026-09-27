@@ -78,24 +78,57 @@ window.RECIPES = [
     ]
   },
   {
-    id: "protein-overnight-oats",
-    name: "Protein overnight oats",
+    id: "classic-overnight-oats",
+    name: "Classic overnight oats with chia",
     tag: "Breakfast",
     emoji: "🥣",
     image: "",
     portions: 5,
-    storage: "Fridge up to 4 days",
+    storage: "Fridge up to 5 days",
     ingredients: [
-      { qty: 250, unit: "g", item: "porridge oats", aisle: "Cupboard", kcal: 950, protein: 33 },
-      { qty: 750, unit: "ml", item: "semi-skimmed milk", aisle: "Dairy & eggs", kcal: 375, protein: 25 },
-      { qty: 150, unit: "g", item: "whey protein", aisle: "Cupboard", kcal: 600, protein: 120 },
-      { qty: 400, unit: "g", item: "frozen mixed berries", aisle: "Frozen", kcal: 200, protein: 5 }
+      { qty: 250, unit: "g", item: "whole rolled oats", aisle: "Cupboard", kcal: 950, protein: 33 },
+      { qty: 50, unit: "g", item: "chia seeds", aisle: "Cupboard", kcal: 240, protein: 12 },
+      { qty: 330, unit: "ml", item: "almond milk (unsweetened)", aisle: "Dairy & eggs", kcal: 50, protein: 1 },
+      { qty: 2, unit: "tbsp", item: "maple syrup", aisle: "Cupboard", kcal: 104, protein: 0, staple: true },
+      { qty: 0.25, unit: "tsp", item: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
     ],
     method: [
-      "Add 50g oats and 30g whey to each of 5 jars.",
-      "Pour 150ml milk into each and stir well so the whey doesn't clump.",
-      "Top each with a handful of frozen berries. They defrost overnight.",
-      "Lid on, fridge, grab one each morning."
+      "Set out 5 jars or containers with lids.",
+      "Add 50g oats and 10g chia seeds to each jar.",
+      "Divide the 2 tbsp maple syrup between all 5 jars (roughly 1.2 tsp per jar) and stir well.",
+      "Pour 66ml almond milk into each jar and stir thoroughly so the chia doesn't clump.",
+      "Add a tiny pinch of salt to each.",
+      "Cover and refrigerate overnight, or up to 5 days. Stir before eating—if too thick, add a splash of extra milk."
+    ]
+  },
+  {
+    id: "apple-pie-overnight-oats",
+    name: "Apple pie overnight oats",
+    tag: "Breakfast",
+    emoji: "🥧",
+    image: "",
+    portions: 5,
+    storage: "Fridge up to 4 days (apples best added fresh before eating)",
+    ingredients: [
+      { qty: 250, unit: "g", item: "whole rolled oats", aisle: "Cupboard", kcal: 950, protein: 33 },
+      { qty: 50, unit: "g", item: "chia seeds", aisle: "Cupboard", kcal: 240, protein: 12 },
+      { qty: 330, unit: "ml", item: "almond milk (unsweetened)", aisle: "Dairy & eggs", kcal: 50, protein: 1 },
+      { qty: 200, unit: "g", item: "unsweetened applesauce", aisle: "Cupboard", kcal: 104, protein: 0 },
+      { qty: 2, unit: "tsp", item: "ground cinnamon", aisle: "Cupboard", kcal: 12, protein: 0, staple: true },
+      { qty: 0.5, unit: "tsp", item: "ground nutmeg", aisle: "Cupboard", kcal: 3, protein: 0, staple: true },
+      { qty: 0.5, unit: "tsp", item: "ground ginger", aisle: "Cupboard", kcal: 2, protein: 0, staple: true },
+      { qty: 1, unit: "tbsp", item: "maple syrup", aisle: "Cupboard", kcal: 52, protein: 0, staple: true },
+      { qty: 0.25, unit: "tsp", item: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
+    ],
+    method: [
+      "Set out 5 jars or containers with lids.",
+      "Add 50g oats and 10g chia seeds to each jar.",
+      "Mix together the applesauce (40g per jar), cinnamon (⅖ tsp per jar), nutmeg (⅕ tsp), ginger (⅕ tsp), and 1 tsp maple syrup.",
+      "Divide this mixture between the 5 jars and stir well.",
+      "Pour 66ml almond milk into each jar and stir thoroughly.",
+      "Add a tiny pinch of salt to each.",
+      "Cover and refrigerate overnight, or up to 4 days.",
+      "To serve, stir well and top with sliced fresh apple if you like, plus a sprinkle of cinnamon."
     ]
   }
 ];
