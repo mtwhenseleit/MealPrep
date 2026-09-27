@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meal prep</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f3f6f2;
+  --surface: #ffffff;
+  --ink: #17211b;
+  --muted: #5b6760;
+  --line: #d6ddd6;
+  --basil: #2d6a44;
+  --basil-soft: #e1ede4;
+  --tomato: #c23b2c;
+  --tape: #efd98a;
+  --tape-ink: #3a3214;
+  --display: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111713; --surface: #19211c; --ink: #e6ede8; --muted: #9aa8a0;
+    --line: #2c372f; --basil: #7cc497; --basil-soft: #1f3226; --tomato: #ef7b6c;
+  }
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 16px/1.5 var(--body); -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--basil); outline-offset: 2px; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px 64px; }
+
+header { padding: 28px 0 8px; }
+h1 {
+  font-family: var(--display); font-stretch: 70%; font-weight: 800;
+  font-size: clamp(2.6rem, 9vw, 4.5rem); line-height: .9; letter-spacing: -.01em;
+  margin: 0 0 20px;
+}
+.tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--ink); }
+.tab {
+  background: none; border: 0; padding: 10px 16px 8px; cursor: pointer;
+  font-family: var(--display); font-weight: 700; font-stretch: 85%; font-size: 1.05rem;
+  color: var(--muted); border-radius: 8px 8px 0 0;
+}
+.tab .count[hidden] { display: none; }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+.tab .count {
+  display: inline-block; min-width: 1.4em; margin-left: 6px; padding: 0 5px;
+  border-radius: 99px; background: var(--tomato); color: #fff; font-size: .8rem; text-align: center;
+}
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.chip {
+  border: 1.5px solid var(--line); background: var(--surface); border-radius: 99px;
+  padding: 5px 14px; cursor: pointer; font-size: .92rem;
+}
+.chip[aria-pressed="true"] { border-color: var(--basil); background: var(--basil); color: var(--paper); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px; }
+.card {
+  position: relative; text-align: left; border: 1.5px solid var(--line); background: var(--surface);
+  border-radius: 14px; padding: 0; overflow: hidden; cursor: pointer; display: flex; flex-direction: column;
+}
+.card:hover { border-color: var(--ink); }
+.thumb {
+  aspect-ratio: 4 / 3; background: var(--basil-soft); display: grid; place-items: center; font-size: 4rem;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card-body { display: block; padding: 16px 16px 18px; }
+.card .title { display: block; font-weight: 800; font-family: var(--display); font-stretch: 80%; font-size: 1.3rem; line-height: 1.15; margin: 0 0 4px; }
+.card .meta { display: block; color: var(--muted); font-size: .9rem; margin: 0; }
+
+/* The freezer-tape label: the one bold element */
+.tape {
+  position: absolute; top: 14px; right: -6px; transform: rotate(3deg);
+  background: var(--tape); color: var(--tape-ink); padding: 6px 16px 6px 12px;
+  font-family: var(--display); font-stretch: 75%; font-weight: 700; line-height: 1.15;
+  box-shadow: 0 1px 2px rgba(0,0,0,.18);
+  clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 3% 50%);
+}
+.tape b { font-size: 1.35rem; font-weight: 800; }
+.tape small { display: block; font-size: .78rem; font-weight: 600; opacity: .8; }
+
+/* Recipe detail */
+dialog {
+  width: min(720px, 100%); max-height: 92vh; border: 0; padding: 0; border-radius: 16px;
+  background: var(--surface); color: var(--ink);
+}
+dialog::backdrop { background: rgba(10, 20, 14, .55); }
+.detail-head { position: relative; }
+.detail-head .thumb { aspect-ratio: 16 / 7; font-size: 5rem; }
+.close {
+  position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%;
+  border: 0; background: var(--surface); cursor: pointer; font-size: 1.3rem;
+}
+.detail-body { padding: 20px 24px 28px; }
+.detail-body h2 { font-family: var(--display); font-stretch: 75%; font-size: 2.2rem; line-height: 1; margin: 0 0 8px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--muted); margin: 0 0 18px; font-size: .95rem; }
+.macros { display: flex; gap: 12px; margin-bottom: 22px; }
+.macro { background: var(--tape); color: var(--tape-ink); padding: 8px 14px; border-radius: 4px; font-family: var(--display); font-stretch: 80%; }
+.macro b { font-size: 1.6rem; display: block; line-height: 1; }
+h3 { font-family: var(--display); font-stretch: 85%; font-size: 1.15rem; margin: 26px 0 10px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .94rem; }
+th, td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tfoot td { font-weight: 700; border-bottom: 0; }
+tfoot tr.per td { color: var(--basil); }
+.explain { color: var(--muted); font-size: .88rem; margin: 8px 0 0; }
+ol.method { padding-left: 1.3em; margin: 0; }
+ol.method li { margin-bottom: 8px; padding-left: 4px; }
+.primary {
+  margin-top: 24px; border: 0; border-radius: 10px; padding: 12px 18px; cursor: pointer;
+  background: var(--basil); color: var(--paper); font-weight: 600;
+}
+.primary.on { background: var(--ink); }
+
+/* Shopping list */
+.shop { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 32px; margin-top: 24px; }
+@media (max-width: 760px) { .shop { grid-template-columns: 1fr; } }
+.panel h2 { font-family: var(--display); font-stretch: 80%; font-size: 1.5rem; margin: 0 0 12px; }
+.check {
+  display: flex; align-items: flex-start; gap: 12px; padding: 10px 4px; border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.check input { width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--basil); flex: none; }
+.check .qty { font-weight: 700; font-variant-numeric: tabular-nums; }
+.check.done span { text-decoration: line-through; color: var(--muted); }
+.aisle { font-family: var(--display); font-stretch: 85%; font-size: 1.05rem; margin: 20px 0 2px; color: var(--basil); }
+.from { display: block; color: var(--muted); font-size: .82rem; }
+.empty { color: var(--muted); border: 1.5px dashed var(--line); border-radius: 12px; padding: 20px; }
+.link { background: none; border: 0; padding: 0; color: var(--tomato); text-decoration: underline; cursor: pointer; font-size: .92rem; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog[open] { animation: rise .18s ease-out; }
+  @keyframes rise { from { transform: translateY(12px); opacity: 0; } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Meal prep</h1>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-view="recipes">Recipes</button>
+      <button class="tab" role="tab" data-view="shop">Shopping list<span class="count" id="count" hidden></span></button>
+    </div>
+  </header>
+  <main id="main"></main>
+</div>
+
+<dialog id="detail"></dialog>
+
+<script src="recipes.js"></script>
+<script>
+const RECIPES = window.RECIPES || [];
+const TAGS = ["All", "Breakfast", "Lunch", "Dinner", "Snack"];
+const AISLES = ["Fruit & veg", "Meat & fish", "Dairy & eggs", "Frozen", "Cupboard"];
+
+// ---- saved state (this browser only) ----
+function load(key, fallback) {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }
+  catch { return fallback; }
+}
+function save(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+}
+const state = {
+  view: "recipes",
+  tag: "All",
+  week: new Set(load("mealprep.week", [])),      // recipe ids picked for this week
+  ticked: new Set(load("mealprep.ticked", []))   // shopping items already in the basket
+};
+function persist() {
+  save("mealprep.week", [...state.week]);
+  save("mealprep.ticked", [...state.ticked]);
+}
+
+// ---- helpers ----
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const round = n => Math.round(n * 10) / 10;
+
+function totals(recipe) {
+  let kcal = 0, protein = 0;
+  for (const ing of recipe.ingredients) { kcal += ing.kcal || 0; protein += ing.protein || 0; }
+  return {
+    kcal, protein,
+    perKcal: Math.round(kcal / recipe.portions),
+    perProtein: Math.round(protein / recipe.portions)
+  };
+}
+
+function amount(qty, unit) {
+  if (unit === "g" && qty >= 1000) return round(qty / 1000) + "kg";
+  if (unit === "ml" && qty >= 1000) return round(qty / 1000) + "L";
+  if (unit === "g" || unit === "ml") return round(qty) + unit;
+  if (unit) return round(qty) + " " + unit;
+  return String(round(qty));
+}
+
+function picture(recipe) {
+  return recipe.image
+    ? `<div class="thumb"><img src="${esc(recipe.image)}" alt=""></div>`
+    : `<div class="thumb" aria-hidden="true">${recipe.emoji || "🍽️"}</div>`;
+}
+
+// ---- recipes view ----
+function renderRecipes() {
+  const list = RECIPES.filter(r => state.tag === "All" || r.tag === state.tag);
+  const chips = TAGS.map(t =>
+    `<button class="chip" data-tag="${t}" aria-pressed="${t === state.tag}">${t}</button>`).join("");
+  const cards = list.map(r => {
+    const t = totals(r);
+    return `<button class="card" data-open="${esc(r.id)}">
+      ${picture(r)}
+      <span class="tape"><b>${t.perProtein}g</b> protein<small>${t.perKcal} kcal a portion</small></span>
+      <span class="card-body">
+        <span class="title">${esc(r.name)}</span>
+        <span class="meta">${esc(r.tag)}, makes ${r.portions}${state.week.has(r.id) ? ". On this week's list" : ""}</span>
+      </span>
+    </button>`;
+  }).join("");
+  return `<div class="filters">${chips}</div>
+    ${list.length ? `<div class="grid">${cards}</div>`
+      : `<p class="empty">No ${state.tag.toLowerCase()} recipes yet. Add one to recipes.js.</p>`}`;
+}
+
+// ---- recipe detail ----
+function openRecipe(id) {
+  const r = RECIPES.find(x => x.id === id);
+  if (!r) return;
+  const t = totals(r);
+  const rows = r.ingredients.map(i => `<tr>
+      <td class="num">${amount(i.qty, i.unit)}</td><td>${esc(i.item)}</td>
+      <td class="num">${Math.round(i.kcal)}</td><td class="num">${round(i.protein)}g</td></tr>`).join("");
+  const inWeek = state.week.has(r.id);
+  const dlg = document.getElementById("detail");
+  dlg.innerHTML = `
+    <div class="detail-head">${picture(r)}<button class="close" aria-label="Close" data-close>✕</button></div>
+    <div class="detail-body">
+      <h2>${esc(r.name)}</h2>
+      <p class="facts"><span>${esc(r.tag)}</span><span>Makes ${r.portions} portions</span>
+        ${r.storage ? `<span>${esc(r.storage)}</span>` : ""}</p>
+      <div class="macros">
+        <div class="macro"><b>${t.perProtein}g</b>protein a portion</div>
+        <div class="macro"><b>${t.perKcal}</b>kcal a portion</div>
+      </div>
+      ${r.serveWith ? `<p>Serve with ${esc(r.serveWith)}.</p>` : ""}
+      <h3>Ingredients</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th class="num">Amount</th><th>Ingredient</th><th class="num">kcal</th><th class="num">Protein</th></tr></thead>
+        <tbody>${rows}</tbody>
+        <tfoot>
+          <tr><td></td><td>Whole batch</td><td class="num">${Math.round(t.kcal)}</td><td class="num">${Math.round(t.protein)}g</td></tr>
+          <tr class="per"><td></td><td>Per portion (÷ ${r.portions})</td><td class="num">${t.perKcal}</td><td class="num">${t.perProtein}g</td></tr>
+        </tfoot>
+      </table></div>
+      <p class="explain">Figures use typical supermarket label values, so treat them as close estimates.</p>
+      <h3>Method</h3>
+      <ol class="method">${r.method.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+      <button class="primary ${inWeek ? "on" : ""}" data-week="${esc(r.id)}">
+        ${inWeek ? "Remove from this week's list" : "Add to this week's list"}</button>
+    </div>`;
+  if (!dlg.open) dlg.showModal();
+}
+
+// ---- shopping list ----
+function shoppingItems() {
+  const merged = new Map();
+  for (const r of RECIPES.filter(x => state.week.has(x.id))) {
+    for (const i of r.ingredients) {
+      const key = (i.item + "|" + i.unit).toLowerCase();
+      if (!merged.has(key)) merged.set(key, { key, item: i.item, unit: i.unit, qty: 0, aisle: i.aisle || "Cupboard", staple: !!i.staple, from: [] });
+      const m = merged.get(key);
+      m.qty += i.qty;
+      m.from.push(r.name);
+    }
+  }
+  return [...merged.values()];
+}
+
+function itemRow(m) {
+  const done = state.ticked.has(m.key);
+  const from = m.from.length > 1 ? `<span class="from">For ${m.from.map(esc).join(" and ")}</span>` : "";
+  return `<label class="check ${done ? "done" : ""}">
+    <input type="checkbox" data-tick="${esc(m.key)}" ${done ? "checked" : ""}>
+    <span><span class="qty">${amount(m.qty, m.unit)}</span> ${esc(m.item)}${from}</span></label>`;
+}
+
+function renderShop() {
+  const pickers = RECIPES.map(r => `<label class="check">
+      <input type="checkbox" data-pick="${esc(r.id)}" ${state.week.has(r.id) ? "checked" : ""}>
+      <span>${esc(r.name)}<span class="from">${esc(r.tag)}, makes ${r.portions}</span></span></label>`).join("");
+
+  const items = shoppingItems();
+  let listHtml;
+  if (!items.length) {
+    listHtml = `<p class="empty">Tick the recipes you're making this week and their ingredients will appear here, combined.</p>`;
+  } else {
+    const buy = items.filter(i => !i.staple);
+    const staples = items.filter(i => i.staple);
+    listHtml = AISLES.map(a => {
+      const inAisle = buy.filter(i => i.aisle === a);
+      return inAisle.length ? `<p class="aisle">${a}</p>${inAisle.map(itemRow).join("")}` : "";
+    }).join("")
+      + (staples.length ? `<p class="aisle">Check the cupboard</p>${staples.map(itemRow).join("")}` : "");
+  }
+
+  return `<div class="shop">
+    <section class="panel"><h2>This week</h2>${pickers}</section>
+    <section class="panel">
+      <div class="row"><h2>To buy</h2>${state.ticked.size ? `<button class="link" data-clear>Untick all</button>` : ""}</div>
+      ${listHtml}
+    </section>
+  </div>`;
+}
+
+// ---- render + events ----
+function render() {
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.view === state.view));
+  const count = document.getElementById("count");
+  count.hidden = !state.week.size;
+  count.textContent = state.week.size;
+  document.getElementById("main").innerHTML = state.view === "recipes" ? renderRecipes() : renderShop();
+}
+
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-view],[data-tag],[data-open],[data-close],[data-week],[data-clear]");
+  if (!el) return;
+  if (el.dataset.view) { state.view = el.dataset.view; render(); }
+  else if (el.dataset.tag) { state.tag = el.dataset.tag; render(); }
+  else if (el.dataset.open) openRecipe(el.dataset.open);
+  else if (el.hasAttribute("data-close")) document.getElementById("detail").close();
+  else if (el.dataset.week) {
+    const id = el.dataset.week;
+    state.week.has(id) ? state.week.delete(id) : state.week.add(id);
+    persist(); render(); openRecipe(id);
+  }
+  else if (el.hasAttribute("data-clear")) { state.ticked.clear(); persist(); render(); }
+});
+
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.dataset.pick) { el.checked ? state.week.add(el.dataset.pick) : state.week.delete(el.dataset.pick); }
+  else if (el.dataset.tick) { el.checked ? state.ticked.add(el.dataset.tick) : state.ticked.delete(el.dataset.tick); }
+  else return;
+  persist(); render();
+});
+
+// close the recipe when tapping outside it
+document.getElementById("detail").addEventListener("click", e => {
+  if (e.target === e.currentTarget) e.currentTarget.close();
+});
+
+render();
+</script>
+</body>
+</html>
