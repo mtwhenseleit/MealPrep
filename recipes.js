@@ -211,7 +211,7 @@ window.RECIPES = [
     name: "Slow cooker chicken tikka masala",
     tag: "Dinner",
     emoji: "🍛",
-    image: "",
+    image: "images/slow-cooker-chicken-tikka-masala.jpg",
     portions: 8,
     storage: "Fridge 3 days, freezer 3 months.",
     serveWith: "basmati rice, naan bread and lime wedges (not included in the macros)",
