@@ -280,7 +280,7 @@ window.RECIPES = [
     name: "Slow cooker bolognese",
     tag: "Lunch",
     emoji: "🍝",
-    image: "",
+    image: "images/slow-cooker-bolognese.jpg",
     portions: 10,
     storage: "Fridge 3–4 days, freezer 3 months.",
     serveWith: "spaghetti or pasta of choice, plus grated parmesan (not included in the macros)",
