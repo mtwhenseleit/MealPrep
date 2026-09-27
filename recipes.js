@@ -82,7 +82,7 @@ window.RECIPES = [
     name: "Classic overnight oats with chia",
     tag: "Breakfast",
     emoji: "🥣",
-    image: "",
+    image: "images/classic-overnight-oats.jpg",
     portions: 5,
     storage: "Fridge up to 5 days",
     ingredients: [
@@ -106,7 +106,7 @@ window.RECIPES = [
     name: "Apple pie overnight oats",
     tag: "Breakfast",
     emoji: "🥧",
-    image: "",
+    image: "images/apple-pie-overnight-oats.jpg",
     portions: 5,
     storage: "Fridge up to 4 days (apples best added fresh before eating)",
     ingredients: [
@@ -136,7 +136,7 @@ window.RECIPES = [
     name: "Peach crisp overnight oats",
     tag: "Breakfast",
     emoji: "🍑",
-    image: "",
+    image: "images/peach-crisp-overnight-oats.jpg",
     portions: 5,
     storage: "Fridge up to 4 days (granola best added fresh before eating)",
     ingredients: [
@@ -162,7 +162,7 @@ window.RECIPES = [
     name: "PB&J overnight oats",
     tag: "Breakfast",
     emoji: "🍓",
-    image: "",
+    image: "images/pbj-overnight-oats.jpg",
     portions: 5,
     storage: "Fridge up to 4 days",
     ingredients: [
@@ -189,7 +189,7 @@ window.RECIPES = [
     name: "Chocolate banana bread overnight oats",
     tag: "Breakfast",
     emoji: "🍌",
-    image: "",
+    image: "images/chocolate-banana-overnight-oats.jpg",
     portions: 5,
     storage: "Fridge up to 4 days",
     ingredients: [
