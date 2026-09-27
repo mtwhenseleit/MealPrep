@@ -274,5 +274,39 @@ window.RECIPES = [
       "Cover, reduce heat to lowest setting, and cook for 2.5 hours or until beef is tender enough to shred easily with two forks.",
       "Shred the beef with two forks and stir through the sauce. Serve with your favourite pasta (rigatoni pictured) and grated parmesan."
     ]
+  },
+  {
+    id: "slow-cooker-bolognese",
+    name: "Slow cooker bolognese",
+    tag: "Lunch",
+    emoji: "🍝",
+    image: "",
+    portions: 10,
+    storage: "Fridge 3–4 days, freezer 3 months.",
+    serveWith: "spaghetti or pasta of choice, plus grated parmesan (not included in the macros)",
+    ingredients: [
+      { qty: 1250, unit: "g", item: "beef mince (5% fat)", aisle: "Meat & fish", kcal: 1813, protein: 300 },
+      { qty: 2000, unit: "g", item: "tinned tomatoes (4 × 400g tins)", aisle: "Cupboard", kcal: 360, protein: 18 },
+      { qty: 525, unit: "g", item: "celery stalks, chopped finely", aisle: "Fruit & veg", kcal: 84, protein: 4 },
+      { qty: 500, unit: "g", item: "carrots, peeled and chopped finely", aisle: "Fruit & veg", kcal: 205, protein: 5 },
+      { qty: 300, unit: "g", item: "onion, peeled and chopped finely", aisle: "Fruit & veg", kcal: 120, protein: 3 },
+      { qty: 75, unit: "g", item: "garlic cloves, peeled and crushed", aisle: "Fruit & veg", kcal: 112, protein: 5 },
+      { qty: 190, unit: "g", item: "tomato purée", aisle: "Cupboard", kcal: 156, protein: 6 },
+      { qty: 310, unit: "ml", item: "dry red wine", aisle: "Cupboard", kcal: 264, protein: 0, staple: true },
+      { qty: 5, unit: "", item: "beef stock cubes, crumbled", aisle: "Cupboard", kcal: 16, protein: 2, staple: true },
+      { qty: 5, unit: "tsp", item: "dried oregano", aisle: "Cupboard", kcal: 13, protein: 0, staple: true },
+      { qty: 8, unit: "", item: "bay leaves", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 2.5, unit: "tbsp", item: "Worcestershire sauce", aisle: "Cupboard", kcal: 21, protein: 0, staple: true },
+      { qty: 40, unit: "g", item: "fresh basil, finely chopped", aisle: "Fruit & veg", kcal: 9, protein: 1 },
+      { qty: 1, unit: "tsp", item: "salt, to taste", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 0.5, unit: "tsp", item: "freshly ground black pepper, to taste", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
+    ],
+    method: [
+      "Put all ingredients (except Worcestershire sauce and fresh basil) into the slow cooker: 1250g beef mince, 2000g tinned tomatoes, 525g celery, 500g carrots, 300g onion, 75g garlic, 190g tomato purée, 310ml red wine, 5 stock cubes, 5 tsp oregano, 8 bay leaves, and salt and pepper to taste.",
+      "Cook for 6 hours on HIGH or 8 hours on LOW.",
+      "Stir in 2.5 tbsp Worcestershire sauce and 40g fresh basil.",
+      "If serving with spaghetti: boil the spaghetti for 2–3 minutes less than usual cooking time. Drain and add to the bolognese sauce with a splash or two of reserved pasta water. Stir well and allow the pasta to absorb the sauce and soften.",
+      "Serve with grated parmesan cheese."
+    ]
   }
 ];
