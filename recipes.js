@@ -130,5 +130,88 @@ window.RECIPES = [
       "Cover and refrigerate overnight, or up to 4 days.",
       "To serve, stir well and top with sliced fresh apple if you like, plus a sprinkle of cinnamon."
     ]
+  },
+  {
+    id: "peach-crisp-overnight-oats",
+    name: "Peach crisp overnight oats",
+    tag: "Breakfast",
+    emoji: "🍑",
+    image: "",
+    portions: 5,
+    storage: "Fridge up to 4 days (granola best added fresh before eating)",
+    ingredients: [
+      { qty: 250, unit: "g", item: "whole rolled oats", aisle: "Cupboard", kcal: 950, protein: 33 },
+      { qty: 50, unit: "g", item: "chia seeds", aisle: "Cupboard", kcal: 240, protein: 12 },
+      { qty: 330, unit: "ml", item: "almond milk (unsweetened)", aisle: "Dairy & eggs", kcal: 50, protein: 1 },
+      { qty: 300, unit: "g", item: "fresh or frozen peaches", aisle: "Fruit & veg", kcal: 120, protein: 3 },
+      { qty: 100, unit: "g", item: "granola", aisle: "Cupboard", kcal: 440, protein: 10 },
+      { qty: 0.25, unit: "tsp", item: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
+    ],
+    method: [
+      "Set out 5 jars or containers with lids.",
+      "Add 50g oats and 10g chia seeds to each jar.",
+      "Divide the peaches between the 5 jars (60g per jar). If using fresh, slice them; if frozen, leave as is.",
+      "Pour 66ml almond milk into each jar and stir thoroughly.",
+      "Add a tiny pinch of salt to each.",
+      "Cover and refrigerate overnight, or up to 4 days.",
+      "To serve, stir well and top with a handful of granola (20g per jar) for crunch. Add granola just before eating so it stays crispy."
+    ]
+  },
+  {
+    id: "pbj-overnight-oats",
+    name: "PB&J overnight oats",
+    tag: "Breakfast",
+    emoji: "🍓",
+    image: "",
+    portions: 5,
+    storage: "Fridge up to 4 days",
+    ingredients: [
+      { qty: 250, unit: "g", item: "whole rolled oats", aisle: "Cupboard", kcal: 950, protein: 33 },
+      { qty: 50, unit: "g", item: "chia seeds", aisle: "Cupboard", kcal: 240, protein: 12 },
+      { qty: 330, unit: "ml", item: "almond milk (unsweetened)", aisle: "Dairy & eggs", kcal: 50, protein: 1 },
+      { qty: 75, unit: "g", item: "creamy peanut butter", aisle: "Cupboard", kcal: 450, protein: 17 },
+      { qty: 50, unit: "g", item: "strawberry jam or chia jam", aisle: "Cupboard", kcal: 130, protein: 0 },
+      { qty: 0.5, unit: "tbsp", item: "maple syrup", aisle: "Cupboard", kcal: 26, protein: 0, staple: true },
+      { qty: 0.25, unit: "tsp", item: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
+    ],
+    method: [
+      "Set out 5 jars or containers with lids.",
+      "Add 50g oats and 10g chia seeds to each jar.",
+      "Divide the peanut butter (15g per jar) and jam (10g per jar) between the jars.",
+      "Add 0.1 tbsp (roughly 1 tsp) maple syrup to each jar.",
+      "Pour 66ml almond milk into each jar and stir thoroughly, breaking up the peanut butter so it distributes well.",
+      "Add a tiny pinch of salt to each.",
+      "Cover and refrigerate overnight, or up to 4 days. Stir before eating."
+    ]
+  },
+  {
+    id: "chocolate-banana-overnight-oats",
+    name: "Chocolate banana bread overnight oats",
+    tag: "Breakfast",
+    emoji: "🍌",
+    image: "",
+    portions: 5,
+    storage: "Fridge up to 4 days",
+    ingredients: [
+      { qty: 250, unit: "g", item: "whole rolled oats", aisle: "Cupboard", kcal: 950, protein: 33 },
+      { qty: 50, unit: "g", item: "chia seeds", aisle: "Cupboard", kcal: 240, protein: 12 },
+      { qty: 330, unit: "ml", item: "almond milk (unsweetened)", aisle: "Dairy & eggs", kcal: 50, protein: 1 },
+      { qty: 25, unit: "g", item: "unsweetened cocoa powder", aisle: "Cupboard", kcal: 60, protein: 5 },
+      { qty: 150, unit: "g", item: "ripe banana", aisle: "Fruit & veg", kcal: 135, protein: 2 },
+      { qty: 2, unit: "tsp", item: "ground cinnamon", aisle: "Cupboard", kcal: 12, protein: 0, staple: true },
+      { qty: 1, unit: "tbsp", item: "maple syrup", aisle: "Cupboard", kcal: 52, protein: 0, staple: true },
+      { qty: 5, unit: "ml", item: "vanilla extract", aisle: "Cupboard", kcal: 12, protein: 0, staple: true },
+      { qty: 0.25, unit: "tsp", item: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
+    ],
+    method: [
+      "Set out 5 jars or containers with lids.",
+      "Add 50g oats and 10g chia seeds to each jar.",
+      "Mash the banana into a smooth paste, then divide between the 5 jars (30g per jar).",
+      "Divide the cocoa powder (5g per jar), cinnamon (⅖ tsp per jar), maple syrup (1 tsp per jar), and vanilla (1ml per jar) between the jars.",
+      "Stir each jar well, making sure the cocoa powder and banana are fully mixed and there are no lumps.",
+      "Pour 66ml almond milk into each jar and stir thoroughly.",
+      "Add a tiny pinch of salt to each.",
+      "Cover and refrigerate overnight, or up to 4 days. Stir before eating—the banana may settle slightly."
+    ]
   }
 ];
