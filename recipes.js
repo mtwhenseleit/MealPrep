@@ -205,5 +205,40 @@ window.RECIPES = [
       "Cover and cook on low for 8 hours (or on high for 4 hours).",
       "Stir before serving. Remove bay leaves if you can find them. Serve with rice or bread, garnished with fresh coriander if you like."
     ]
+  },
+  {
+    id: "slow-cooker-chicken-tikka-masala",
+    name: "Slow cooker chicken tikka masala",
+    tag: "Dinner",
+    emoji: "🍛",
+    image: "",
+    portions: 8,
+    storage: "Fridge 3 days, freezer 3 months.",
+    serveWith: "basmati rice, naan bread and lime wedges (not included in the macros)",
+    ingredients: [
+      { qty: 3000, unit: "g", item: "boneless, skinless chicken thighs (about 20 thighs, cut into 3 chunks each)", aisle: "Meat & fish", kcal: 3270, protein: 600 },
+      { qty: 60, unit: "ml", item: "vegetable or rapeseed oil", aisle: "Cupboard", kcal: 480, protein: 0, staple: true },
+      { qty: 2, unit: "", item: "large onions, chopped", aisle: "Fruit & veg", kcal: 160, protein: 4 },
+      { qty: 4, unit: "", item: "garlic cloves, crushed", aisle: "Fruit & veg", kcal: 30, protein: 1 },
+      { qty: 40, unit: "g", item: "ginger, finely grated or chopped", aisle: "Fruit & veg", kcal: 32, protein: 1 },
+      { qty: 90, unit: "g", item: "tikka curry paste", aisle: "Cupboard", kcal: 135, protein: 4 },
+      { qty: 1000, unit: "ml", item: "passata (tomato)", aisle: "Cupboard", kcal: 180, protein: 9 },
+      { qty: 30, unit: "g", item: "tomato purée", aisle: "Cupboard", kcal: 25, protein: 1 },
+      { qty: 30, unit: "ml", item: "malt vinegar", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 26, unit: "g", item: "light brown soft sugar", aisle: "Cupboard", kcal: 101, protein: 0, staple: true },
+      { qty: 2, unit: "", item: "cinnamon sticks", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 10, unit: "", item: "cardamom pods", aisle: "Cupboard", kcal: 6, protein: 0, staple: true },
+      { qty: 200, unit: "ml", item: "double cream", aisle: "Dairy & eggs", kcal: 898, protein: 4 },
+      { qty: 20, unit: "g", item: "fresh coriander, chopped", aisle: "Fruit & veg", kcal: 5, protein: 0 }
+    ],
+    method: [
+      "Season the 3000g chicken thighs (about 20 thighs). Heat 60ml oil in a wide frying pan over high heat.",
+      "Add chicken in batches (don't overcrowd). Cook until browned (about 3–4 minutes per batch), then transfer to the slow cooker.",
+      "Add 2 chopped onions, 4 crushed garlic cloves, and 40g ginger to the pan. Cook for 2–3 minutes until softened. Add a splash of water and scrape up any browned bits from the bottom, then tip into the slow cooker.",
+      "Stir in 90g tikka curry paste, 1000ml passata, 30g tomato purée, 30ml malt vinegar, 26g sugar, 2 cinnamon sticks, and 10 cardamom pods. Season well with salt and pepper.",
+      "Cover and cook on low for 5–7 hours (or on high for 4–5 hours).",
+      "Stir in 200ml double cream and check the seasoning. Cook for another 10–15 minutes until hot. Remove cinnamon sticks if you can find them.",
+      "Ladle between bowls and garnish with 20g fresh coriander. Serve with basmati rice, naan bread, and lime wedges."
+    ]
   }
 ];
