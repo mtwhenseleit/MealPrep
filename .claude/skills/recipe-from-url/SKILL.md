@@ -53,7 +53,7 @@ Create a JavaScript object matching the schema in [recipes.js:5–22](recipes.js
 - **name**: the recipe title, in UK English (e.g. "Thai green curry", not "Thai Green Curry" unless that's how it's branded).
 - **tag**: infer from the original recipe and the user's context (usually Breakfast, Lunch, Dinner, or Snack; call out your choice for confirmation if it's unclear).
 - **emoji**: pick one that represents the dish (🍛 for curry, 🥗 for salad, etc.).
-- **image**: leave as `""` — images are added by hand per the README.
+- **image**: **Check the `images/` folder for a file matching the recipe id** (e.g. if id is `"thai-green-curry"`, look for `images/thai-green-curry.jpg`, `.png`, `.webp`, etc.). If a matching image exists, populate this field with that path (e.g. `"images/thai-green-curry.jpg"`). Otherwise, leave as `""` — images can be added by hand later per the README. **Always mention to the user if you found and used an image.**
 - **portions**: the batch size the user confirmed in step 2.
 - **storage**: a one-line note in the style of existing recipes (e.g. "Fridge 3–4 days, freezer 3 months"). Infer from the dish type if not stated in the source.
 - **serveWith** (optional): if the recipe suggests serving with rice, pasta, potatoes, or bread (not counted in the macros), note it here (e.g. `"rice or couscous (not included in the macros)"`). Omit if it's a complete dish.
@@ -90,23 +90,27 @@ Per portion: ~230 kcal, ~38g protein
 Scaled from: [original title] (originally serves 4)
 ```
 
+If an image was found and used, mention it: "✓ Image found: `images/recipe-name.jpg`"
+
 Ask the user: "Does this look right? Reply 'yes' to add it to recipes.js, or give me feedback to adjust."
 
 Wait for confirmation. Do not edit any file until they approve.
 
-## Step 6: Write to recipes.js
+## Step 6: Write to recipes.js and add image if found
 
 Once confirmed:
 
 1. Read the current `recipes.js` file.
 2. Locate the `window.RECIPES = [` line.
 3. Add the new recipe object **before the closing `]`**, with a trailing comma (matching the existing format). Preserve the existing header comment block and formatting.
-4. Write the file.
-5. Tell the user: "Recipe added! Open `index.html` in your browser to check it renders correctly. The new recipe should appear in the Recipes tab. If the numbers look good or you want to tweak anything (e.g. add a photo path), let me know."
+4. If an image was found in Step 4, also stage it for commit (it should already be in `images/`).
+5. Write the file and commit to git (if using git).
+6. Tell the user: "Recipe added! Open `index.html` in your browser to check it renders correctly. The new recipe should appear in the Recipes tab." If an image was used, add: "The photo is already included in the card." Otherwise: "If the numbers look good or you want to tweak anything (e.g. add a photo path), let me know."
 
 ## Notes
 
 - **Show your working**: Every kcal/protein figure should have a visible calculation (comment or explanation in chat).
 - **UK context**: Use British English, UK supermarket brands/values, metric units (g, ml, tbsp, tsp). Assume the user has access to UK shops.
-- **Readability**: Match the style of the existing 3 recipes — plain, clear code, no comprehensions or clever tricks.
+- **Readability**: Match the style of the existing recipes — plain, clear code, no comprehensions or clever tricks.
 - **Ask if unsure**: If a tag, aisle, or macro estimate is ambiguous, ask the user rather than guessing.
+- **Image auto-detection**: Always check `images/` for a file matching the recipe's kebab-case id (any image format: `.jpg`, `.png`, `.webp`). If found, automatically populate the `image` field with the path and tell the user which image was used. This saves manual updates after uploading photos.
