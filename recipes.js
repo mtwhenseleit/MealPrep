@@ -246,7 +246,7 @@ window.RECIPES = [
     name: "Slow-cooked beef ragu",
     tag: "Dinner",
     emoji: "🍝",
-    image: "",
+    image: "images/slow-cooked-beef-ragu.webp",
     portions: 10,
     storage: "Fridge 3–4 days, freezer 3 months.",
     serveWith: "rigatoni or pasta of choice, plus grated parmesan (not included in the macros)",
