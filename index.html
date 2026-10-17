@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Phone browser settings: colour of the browser bar, and stop iPhone turning numbers like "1700" into phone links -->
+<meta name="theme-color" content="#f3f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111713" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+<!-- Lets the page open full screen when saved to the home screen (iPhone and Android) -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Meal prep">
 <title>Meal prep</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +31,6 @@
   --display: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -33,18 +39,32 @@
   }
 }
 *, *::before, *::after { box-sizing: inherit; }
-html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  /* stop phones enlarging the text when you turn them sideways */
+  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+}
 body {
   margin: 0; background: var(--paper); color: var(--ink);
   font: 16px/1.5 var(--body); -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
+/* stop the page behind scrolling while a recipe is open */
+body:has(dialog[open]) { overflow: hidden; }
 button, input { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--basil); outline-offset: 2px; }
 img { max-width: 100%; display: block; }
 
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px 64px; }
+/* The env(safe-area-inset-...) values keep content clear of the iPhone notch,
+   the rounded corners and the home bar at the bottom of the screen. */
+.wrap {
+  max-width: 1040px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
 
-header { padding: 28px 0 8px; }
+header { padding: calc(28px + env(safe-area-inset-top)) 0 8px; }
 h1 {
   font-family: var(--display); font-stretch: 70%; font-weight: 800;
   font-size: clamp(2.6rem, 9vw, 4.5rem); line-height: .9; letter-spacing: -.01em;
@@ -75,11 +95,16 @@ h1 {
   position: relative; text-align: left; border: 1.5px solid var(--line); background: var(--surface);
   border-radius: 14px; padding: 0; overflow: hidden; cursor: pointer; display: flex; flex-direction: column;
 }
-.card:hover { border-color: var(--ink); }
+/* hover only on devices with a mouse, so the border doesn't stick on after a tap */
+@media (hover: hover) { .card:hover { border-color: var(--ink); } }
+.card:active { border-color: var(--ink); }
 .thumb {
   aspect-ratio: 4 / 3; background: var(--basil-soft); display: grid; place-items: center; font-size: 4rem;
+  overflow: hidden; /* without this, a tall photo stretches the box past its 4:3 shape */
+  position: relative;
 }
-.thumb img { width: 100%; height: 100%; object-fit: cover; }
+/* the photo fills the box exactly and is cropped from the centre */
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .card-body { display: block; padding: 16px 16px 18px; }
 .card .title { display: block; font-weight: 800; font-family: var(--display); font-stretch: 80%; font-size: 1.3rem; line-height: 1.15; margin: 0 0 4px; }
 .card .meta { display: block; color: var(--muted); font-size: .9rem; margin: 0; }
@@ -98,7 +123,9 @@ h1 {
 /* Recipe detail */
 dialog {
   width: min(720px, 100%); max-height: 92vh; border: 0; padding: 0; border-radius: 16px;
+  max-height: 92dvh; /* dvh allows for phone browser toolbars; older browsers use the 92vh line above */
   background: var(--surface); color: var(--ink);
+  overscroll-behavior: contain;
 }
 dialog::backdrop { background: rgba(10, 20, 14, .55); }
 .detail-head { position: relative; }
@@ -146,6 +173,36 @@ ol.method li { margin-bottom: 8px; padding-left: 4px; }
 .empty { color: var(--muted); border: 1.5px dashed var(--line); border-radius: 12px; padding: 20px; }
 .link { background: none; border: 0; padding: 0; color: var(--tomato); text-decoration: underline; cursor: pointer; font-size: .92rem; }
 .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+
+/* Touch screens: make small buttons easier to tap (aiming for about 44px tall) */
+@media (pointer: coarse) {
+  .tab { padding: 12px 16px 10px; }
+  .chip { padding: 9px 16px; }
+  .link { padding: 10px 0; }
+  .close { width: 44px; height: 44px; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .wrap {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .tab { flex: 1; text-align: center; padding-left: 8px; padding-right: 8px; }
+  .grid { gap: 16px; }
+
+  /* the recipe opens as a sheet that slides up from the bottom of the screen */
+  dialog {
+    width: 100%; max-width: 100%; margin: auto 0 0;
+    border-radius: 16px 16px 0 0;
+  }
+  .detail-head .thumb { aspect-ratio: 16 / 9; }
+  .detail-body { padding: 18px 16px calc(28px + env(safe-area-inset-bottom)); }
+  .detail-body h2 { font-size: 1.8rem; }
+  table { font-size: .88rem; }
+  th, td { padding: 7px 4px; }
+  .primary { width: 100%; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   dialog[open] { animation: rise .18s ease-out; }
