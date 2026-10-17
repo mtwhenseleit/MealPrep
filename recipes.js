@@ -308,5 +308,39 @@ window.RECIPES = [
       "If serving with spaghetti: boil the spaghetti for 2–3 minutes less than usual cooking time. Drain and add to the bolognese sauce with a splash or two of reserved pasta water. Stir well and allow the pasta to absorb the sauce and soften.",
       "Serve with grated parmesan cheese."
     ]
+  },
+  {
+    id: "butternut-squash-soup-chilli",
+    name: "Butternut squash soup with chilli & crème fraîche",
+    tag: "Lunch",
+    emoji: "🎃",
+    image: "images/butternut-squash-soup.jpg",
+    portions: 8,
+    storage: "Fridge 3–4 days, freezer 3 months.",
+    ingredients: [
+      // 1kg × 2 = 2000g. Butternut squash ~40 kcal/100g, 1.2g protein/100g. 20 × 40 = 800 kcal, 20 × 1.2 = 24g
+      { qty: 2000, unit: "g", item: "butternut squash, peeled and deseeded", aisle: "Fruit & veg", kcal: 800, protein: 24 },
+      // 2 tbsp × 2 = 4 tbsp (60ml). Olive oil ~120 kcal/tbsp. 4 × 120 = 480 kcal
+      { qty: 4, unit: "tbsp", item: "olive oil", aisle: "Cupboard", kcal: 480, protein: 0, staple: true },
+      // 1 tbsp × 2 = 2 tbsp (28g). Butter ~717 kcal/100g. 28g × 7.17 = 200 kcal
+      { qty: 2, unit: "tbsp", item: "butter", aisle: "Dairy & eggs", kcal: 200, protein: 0 },
+      // 2 onions × 2 = 4. Matches the chilli recipe (2 onions = 80 kcal, 2g protein). 4 × 40 = 160 kcal, 4g protein
+      { qty: 4, unit: "", item: "onions, diced", aisle: "Fruit & veg", kcal: 160, protein: 4 },
+      // 1 clove × 2 = 2 cloves (~10g). Matches the garlic rate in the chilli recipe (~1.5 kcal/g). 10 × 1.5 = 15 kcal, ~1g protein
+      { qty: 2, unit: "", item: "garlic cloves, thinly sliced", aisle: "Fruit & veg", kcal: 15, protein: 1 },
+      // 2 chillies × 2 = 4. Matches red chilli peppers in the chilli recipe (2 = 40 kcal, 2g protein). 4 × 20 = 80 kcal, 4g protein
+      { qty: 4, unit: "", item: "mild red chillies, deseeded and chopped", aisle: "Fruit & veg", kcal: 80, protein: 4 },
+      // 850ml × 2 = 1700ml. Stock ~2 kcal/100ml. 17 × 2 = 34 kcal, ~0.1g protein/100ml = 2g
+      { qty: 1700, unit: "ml", item: "vegetable stock", aisle: "Cupboard", kcal: 34, protein: 2, staple: true },
+      // 4 tbsp × 2 = 8 tbsp (~120g, 15g per tbsp). Full-fat crème fraîche ~193 kcal/100g, 2.1g protein/100g. 120g: 232 kcal, 2.5g protein (rounded to 3)
+      { qty: 8, unit: "tbsp", item: "crème fraîche", aisle: "Dairy & eggs", kcal: 232, protein: 3 }
+    ],
+    method: [
+      "Heat the oven to 200°C (180°C fan, gas 6). Cut the 2kg squash into large cubes, about 4cm across. Toss in a large roasting tin (or two) with 2 tbsp of the olive oil, then roast for 30 minutes, turning once, until golden and soft.",
+      "While the squash roasts, melt the 2 tbsp butter with the remaining 2 tbsp olive oil in a large saucepan. Add the 4 onions, 2 garlic cloves, and 3 of the 4 chopped chillies. Cover and cook on very low heat for 15–20 minutes, until the onions are completely soft.",
+      "Add the roasted squash, 1700ml hot vegetable stock, and 8 tbsp crème fraîche to the pan. Blend with a stick blender until smooth. For a silkier soup, blend in a liquidiser in batches instead.",
+      "Return the soup to the pan, reheat gently, and season to taste.",
+      "Let the soup cool, then divide between 8 containers. Serve with a swirl of crème fraîche and a sprinkle of the reserved chopped chilli (1 chilli)."
+    ]
   }
 ];
