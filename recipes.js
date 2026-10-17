@@ -342,5 +342,45 @@ window.RECIPES = [
       "Return the soup to the pan, reheat gently, and season to taste.",
       "Let the soup cool, then divide between 8 containers. Serve with a swirl of crème fraîche and a sprinkle of the reserved chopped chilli (1 chilli)."
     ]
+  },
+  {
+    id: "leek-and-potato-soup",
+    name: "Leek and potato soup",
+    tag: "Lunch",
+    emoji: "🍲",
+    image: "images/leek-and-potato-soup.webp",
+    portions: 12,
+    storage: "Fridge 3–4 days, freezer 3 months (freeze before adding the milk if you can).",
+    serveWith: "chunky bread or cheese on toast (not included in the macros)",
+    ingredients: [
+      // 3 tbsp, 1 tbsp ≈ 120 kcal. 3 × 120 = 360 kcal
+      { qty: 3, unit: "tbsp", item: "vegetable oil", aisle: "Cupboard", kcal: 360, protein: 0, staple: true },
+      // 1800g. Leeks ~30 kcal/100g, 1.5g protein/100g. 18 × 30 = 540 kcal, 18 × 1.5 = 27g
+      { qty: 1800, unit: "g", item: "leeks, washed and sliced", aisle: "Fruit & veg", kcal: 540, protein: 27 },
+      // 3 onions. Matches the chilli recipe (2 onions = 80 kcal, 2g protein). 3 × 40 = 120 kcal, 3g protein
+      { qty: 3, unit: "", item: "onions, roughly chopped", aisle: "Fruit & veg", kcal: 120, protein: 3 },
+      // 1350g. Potatoes ~75 kcal/100g, 2g protein/100g. 13.5 × 75 = 1013 kcal, 13.5 × 2 = 27g
+      { qty: 1350, unit: "g", item: "potatoes, cut into 1–2cm cubes", aisle: "Fruit & veg", kcal: 1013, protein: 27 },
+      // 3 tsp. Matches the thyme in the ragu (2 tsp = 6 kcal). 3 × 3 = 9 kcal
+      { qty: 3, unit: "tsp", item: "dried thyme", aisle: "Cupboard", kcal: 9, protein: 0, staple: true },
+      // 3.6 litres = 3600ml. Vegetable stock ~2 kcal/100ml, ~0.1g protein/100ml. 36 × 2 = 72 kcal, 36 × 0.1 = 3.6g (rounded to 4)
+      { qty: 3600, unit: "ml", item: "vegetable stock", aisle: "Cupboard", kcal: 72, protein: 4, staple: true },
+      // 600ml semi-skimmed milk. ~47 kcal/100ml, 3.4g protein/100ml. 6 × 47 = 282 kcal, 6 × 3.4 = 20g
+      { qty: 600, unit: "ml", item: "semi-skimmed milk", aisle: "Dairy & eggs", kcal: 282, protein: 20 },
+      // ~10g chives (about one pack). Chives ~30 kcal/100g. 10 × 0.3 = 3 kcal
+      { qty: 10, unit: "g", item: "fresh chives, chopped", aisle: "Fruit & veg", kcal: 3, protein: 0 },
+      // 1 tsp estimate for "season generously". Salt has no calories
+      { qty: 1, unit: "tsp", item: "sea salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      // 1 tsp estimate. Black pepper ~5 kcal/tsp (matches the ragu and chilli recipes)
+      { qty: 1, unit: "tsp", item: "freshly ground black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true }
+    ],
+    method: [
+      "Heat 3 tbsp oil in a large saucepan. Add the 1800g leeks, 3 chopped onions, and 1350g potatoes. Stir well to coat everything and cook for 3–4 minutes.",
+      "Add 3 tsp dried thyme, 3.6 litres vegetable stock, 1 tsp sea salt and 1 tsp black pepper. Bring to a simmer.",
+      "Simmer gently, uncovered, for 25–30 minutes until the potatoes are soft.",
+      "Blend until smooth with a stick blender, or in a liquidiser in batches.",
+      "Stir in the 600ml milk and bring back to a simmer. Taste and add more salt and pepper if needed.",
+      "Serve in bowls topped with the chopped chives, plus a swirl of milk or cream if you like. To store, let the soup cool and portion into containers."
+    ]
   }
 ];
