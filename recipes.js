@@ -384,5 +384,41 @@ window.RECIPES = [
       "Stir in the 600ml milk and bring back to a simmer. Taste and add more salt and pepper if needed.",
       "Serve in bowls topped with the chopped chives, plus a swirl of milk or cream if you like. To store, let the soup cool and portion into containers."
     ]
+  },
+  {
+    id: "protein-bars",
+    name: "Protein bars",
+    tag: "Snack",
+    emoji: "🥜",
+    image: "images/protein-bars.jpg",
+    portions: 16,
+    storage: "Fridge up to 2 weeks, freezer 3 months (layer with baking paper).",
+    ingredients: [
+      // 135g (1½ cups). Same oats as the overnight oats (250g = 950 kcal, 33g protein → 3.8 kcal/g, 13.2g/100g). 135 × 3.8 = 513 kcal, 1.35 × 13.2 = 18g
+      { qty: 135, unit: "g", item: "whole rolled oats", aisle: "Cupboard", kcal: 513, protein: 18 },
+      // 180g (¾ cup). Same as the PB&J oats (75g = 450 kcal, 17g protein → 600 kcal/100g, 22.7g/100g). 1.8 × 600 = 1080 kcal, 1.8 × 22.7 = 41g
+      { qty: 180, unit: "g", item: "creamy peanut butter", aisle: "Cupboard", kcal: 1080, protein: 41 },
+      // 120g (1 banana, mashed). Same as the chocolate banana oats (~90 kcal/100g, 1.3g protein/100g). 1.2 × 90 = 108 kcal, 1.2 × 1.3 = 2g
+      { qty: 120, unit: "g", item: "ripe banana", aisle: "Fruit & veg", kcal: 108, protein: 2 },
+      // 110g (⅓ cup). Honey ~329 kcal/100g, ~0g protein. 1.1 × 329 = 362 kcal
+      { qty: 110, unit: "g", item: "honey (or maple syrup)", aisle: "Cupboard", kcal: 362, protein: 0 },
+      // "Pinch" estimated as 0.25 tsp, same as the overnight oats
+      { qty: 0.25, unit: "tsp", item: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      // 55g (½ cup). Milled flaxseed (e.g. Linwoods) ~500 kcal/100g, ~20g protein/100g. 0.55 × 500 = 275 kcal, 0.55 × 20 = 11g
+      { qty: 55, unit: "g", item: "ground flaxseed", aisle: "Cupboard", kcal: 275, protein: 11 },
+      // 120g (1 cup, about 4–5 scoops). Whey (e.g. MyProtein Impact Whey) ~400 kcal/100g, ~78g protein/100g. 1.2 × 400 = 480 kcal, 1.2 × 78 = 94g
+      { qty: 120, unit: "g", item: "whey protein powder (vanilla or chocolate)", aisle: "Cupboard", kcal: 480, protein: 94, staple: true },
+      // 10ml (2 tsp). Same as the chocolate banana oats (5ml = 12 kcal). 2 × 12 = 24 kcal
+      { qty: 10, unit: "ml", item: "vanilla extract", aisle: "Cupboard", kcal: 24, protein: 0, staple: true },
+      // 90g (¾ cup) mix-in. Dark chocolate chips ~510 kcal/100g, ~6g protein/100g. 0.9 × 510 = 459 kcal, 0.9 × 6 = 5g
+      { qty: 90, unit: "g", item: "dark chocolate chips", aisle: "Cupboard", kcal: 459, protein: 5 }
+    ],
+    method: [
+      "Line a 20cm (8 inch) square tin with baking paper.",
+      "In a large bowl, mix the 135g oats, 180g peanut butter, 120g mashed banana, 110g honey, a pinch of salt, 55g ground flaxseed, 120g protein powder and 10ml vanilla until well combined.",
+      "Fold in the 90g chocolate chips. The mixture should be soft, not dry or crumbly. If it's too dry, add a splash of water or milk, or a little extra honey.",
+      "Press the mixture very firmly into the tin. Refrigerate for at least 1 hour, then cut into 16 bars.",
+      "Keep in the fridge for up to 2 weeks, or freeze in layers separated by baking paper for up to 3 months."
+    ]
   }
 ];
