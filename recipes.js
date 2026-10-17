@@ -16,6 +16,8 @@
 //       item, aisle (used to group the shopping list),
 //       kcal and protein (g) for THAT quantity (from typical label values),
 //       staple: true for cupboard items you usually have (oil, spices)
+//       buy: optional shopping-list name, so the same thing merges across recipes
+//            (e.g. item "onions, diced" with buy "onions"); the recipe still shows the item text
 //   method    list of steps
 //
 // Macros per portion are calculated by the app: sum of ingredients / portions.
@@ -170,12 +172,12 @@ window.RECIPES = [
     serveWith: "rice or bread (not included in the macros)",
     ingredients: [
       { qty: 835, unit: "g", item: "beef mince (5% fat)", aisle: "Meat & fish", kcal: 1211, protein: 200 },
-      { qty: 800, unit: "g", item: "chopped tomatoes canned (2 tins 400g)", aisle: "Cupboard", kcal: 144, protein: 7 },
+      { qty: 800, unit: "g", item: "chopped tomatoes canned (2 tins 400g)", buy: "tinned chopped tomatoes", aisle: "Cupboard", kcal: 144, protein: 7 },
       { qty: 500, unit: "g", item: "kidney beans canned, drained", aisle: "Cupboard", kcal: 500, protein: 40 },
-      { qty: 2, unit: "", item: "large white onions", aisle: "Fruit & veg", kcal: 80, protein: 2 },
+      { qty: 2, unit: "", item: "large white onions", buy: "onions", aisle: "Fruit & veg", kcal: 80, protein: 2 },
       { qty: 2, unit: "", item: "red peppers", aisle: "Fruit & veg", kcal: 62, protein: 2 },
-      { qty: 20, unit: "g", item: "garlic cloves minced", aisle: "Fruit & veg", kcal: 30, protein: 1 },
-      { qty: 100, unit: "g", item: "tomato paste", aisle: "Cupboard", kcal: 82, protein: 3 },
+      { qty: 20, unit: "g", item: "garlic cloves minced", buy: "garlic", aisle: "Fruit & veg", kcal: 30, protein: 1 },
+      { qty: 100, unit: "g", item: "tomato paste", buy: "tomato purée", aisle: "Cupboard", kcal: 82, protein: 3 },
       { qty: 2, unit: "", item: "beef stock cubes", aisle: "Cupboard", kcal: 6, protein: 1, staple: true },
       { qty: 250, unit: "ml", item: "water (for stock)", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
       { qty: 2, unit: "tsp", item: "dried oregano", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
@@ -187,11 +189,11 @@ window.RECIPES = [
       { qty: 2, unit: "tsp", item: "smoked paprika", aisle: "Cupboard", kcal: 6, protein: 0, staple: true },
       { qty: 2, unit: "tsp", item: "Worcestershire sauce", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
       { qty: 1, unit: "tsp", item: "dark brown sugar", aisle: "Cupboard", kcal: 19, protein: 0, staple: true },
-      { qty: 2, unit: "tsp", item: "salt flakes", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
-      { qty: 1, unit: "tsp", item: "ground black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "salt flakes", buy: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 1, unit: "tsp", item: "ground black pepper", buy: "black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
       { qty: 45, unit: "g", item: "plain flour (wheat or corn)", aisle: "Cupboard", kcal: 164, protein: 5, staple: true },
       { qty: 30, unit: "ml", item: "vegetable oil", aisle: "Cupboard", kcal: 240, protein: 0, staple: true },
-      { qty: 2, unit: "", item: "red chilli peppers (optional for extra heat)", aisle: "Fruit & veg", kcal: 40, protein: 2 }
+      { qty: 2, unit: "", item: "red chilli peppers (optional for extra heat)", buy: "red chillies", aisle: "Fruit & veg", kcal: 40, protein: 2 }
     ],
     method: [
       "Dice the 2 onions and 2 red peppers. Heat 2 tbsp oil in a large pan over medium-high heat.",
@@ -217,12 +219,12 @@ window.RECIPES = [
     serveWith: "basmati rice, naan bread and lime wedges (not included in the macros)",
     ingredients: [
       { qty: 3000, unit: "g", item: "boneless, skinless chicken thighs (about 20 thighs, cut into 3 chunks each)", aisle: "Meat & fish", kcal: 3270, protein: 600 },
-      { qty: 60, unit: "ml", item: "vegetable or rapeseed oil", aisle: "Cupboard", kcal: 480, protein: 0, staple: true },
-      { qty: 2, unit: "", item: "large onions, chopped", aisle: "Fruit & veg", kcal: 160, protein: 4 },
-      { qty: 4, unit: "", item: "garlic cloves, crushed", aisle: "Fruit & veg", kcal: 30, protein: 1 },
+      { qty: 60, unit: "ml", item: "vegetable or rapeseed oil", buy: "vegetable oil", aisle: "Cupboard", kcal: 480, protein: 0, staple: true },
+      { qty: 2, unit: "", item: "large onions, chopped", buy: "onions", aisle: "Fruit & veg", kcal: 160, protein: 4 },
+      { qty: 4, unit: "", item: "garlic cloves, crushed", buy: "garlic", aisle: "Fruit & veg", kcal: 30, protein: 1 },
       { qty: 40, unit: "g", item: "ginger, finely grated or chopped", aisle: "Fruit & veg", kcal: 32, protein: 1 },
       { qty: 90, unit: "g", item: "tikka curry paste", aisle: "Cupboard", kcal: 135, protein: 4 },
-      { qty: 1000, unit: "ml", item: "passata (tomato)", aisle: "Cupboard", kcal: 180, protein: 9 },
+      { qty: 1000, unit: "ml", item: "passata (tomato)", buy: "passata", aisle: "Cupboard", kcal: 180, protein: 9 },
       { qty: 30, unit: "g", item: "tomato purée", aisle: "Cupboard", kcal: 25, protein: 1 },
       { qty: 30, unit: "ml", item: "malt vinegar", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
       { qty: 26, unit: "g", item: "light brown soft sugar", aisle: "Cupboard", kcal: 101, protein: 0, staple: true },
@@ -251,18 +253,18 @@ window.RECIPES = [
     storage: "Fridge 3–4 days, freezer 3 months.",
     serveWith: "rigatoni or pasta of choice, plus grated parmesan (not included in the macros)",
     ingredients: [
-      { qty: 50, unit: "ml", item: "extra-virgin olive oil", aisle: "Cupboard", kcal: 400, protein: 0, staple: true },
-      { qty: 4, unit: "", item: "brown onions, finely diced", aisle: "Fruit & veg", kcal: 160, protein: 4 },
-      { qty: 500, unit: "g", item: "large carrots, finely diced", aisle: "Fruit & veg", kcal: 205, protein: 5 },
-      { qty: 300, unit: "g", item: "celery stalks, finely diced", aisle: "Fruit & veg", kcal: 48, protein: 2 },
-      { qty: 20, unit: "g", item: "garlic cloves, roughly chopped", aisle: "Fruit & veg", kcal: 30, protein: 1 },
+      { qty: 50, unit: "ml", item: "extra-virgin olive oil", buy: "olive oil", aisle: "Cupboard", kcal: 400, protein: 0, staple: true },
+      { qty: 4, unit: "", item: "brown onions, finely diced", buy: "onions", aisle: "Fruit & veg", kcal: 160, protein: 4 },
+      { qty: 500, unit: "g", item: "large carrots, finely diced", buy: "carrots", aisle: "Fruit & veg", kcal: 205, protein: 5 },
+      { qty: 300, unit: "g", item: "celery stalks, finely diced", buy: "celery", aisle: "Fruit & veg", kcal: 48, protein: 2 },
+      { qty: 20, unit: "g", item: "garlic cloves, roughly chopped", buy: "garlic", aisle: "Fruit & veg", kcal: 30, protein: 1 },
       { qty: 1700, unit: "g", item: "beef chuck braising steak, cut into 2cm cubes", aisle: "Meat & fish", kcal: 4250, protein: 340 },
       { qty: 210, unit: "ml", item: "dry red wine", aisle: "Cupboard", kcal: 179, protein: 0, staple: true },
-      { qty: 210, unit: "g", item: "tomato paste", aisle: "Cupboard", kcal: 172, protein: 7 },
-      { qty: 1170, unit: "ml", item: "tomato passata", aisle: "Cupboard", kcal: 211, protein: 11 },
+      { qty: 210, unit: "g", item: "tomato paste", buy: "tomato purée", aisle: "Cupboard", kcal: 172, protein: 7 },
+      { qty: 1170, unit: "ml", item: "tomato passata", buy: "passata", aisle: "Cupboard", kcal: 211, protein: 11 },
       { qty: 840, unit: "ml", item: "beef stock", aisle: "Cupboard", kcal: 67, protein: 6, staple: true },
-      { qty: 2, unit: "tsp", item: "sea salt flakes", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
-      { qty: 1, unit: "tsp", item: "freshly cracked black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
+      { qty: 2, unit: "tsp", item: "sea salt flakes", buy: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 1, unit: "tsp", item: "freshly cracked black pepper", buy: "black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
       { qty: 2, unit: "tsp", item: "dried thyme", aisle: "Cupboard", kcal: 6, protein: 0, staple: true },
       { qty: 4, unit: "", item: "bay leaves", aisle: "Cupboard", kcal: 3, protein: 0, staple: true }
     ],
@@ -286,20 +288,20 @@ window.RECIPES = [
     serveWith: "spaghetti or pasta of choice, plus grated parmesan (not included in the macros)",
     ingredients: [
       { qty: 1250, unit: "g", item: "beef mince (5% fat)", aisle: "Meat & fish", kcal: 1813, protein: 300 },
-      { qty: 2000, unit: "g", item: "tinned tomatoes (4 × 400g tins)", aisle: "Cupboard", kcal: 360, protein: 18 },
-      { qty: 525, unit: "g", item: "celery stalks, chopped finely", aisle: "Fruit & veg", kcal: 84, protein: 4 },
-      { qty: 500, unit: "g", item: "carrots, peeled and chopped finely", aisle: "Fruit & veg", kcal: 205, protein: 5 },
-      { qty: 300, unit: "g", item: "onion, peeled and chopped finely", aisle: "Fruit & veg", kcal: 120, protein: 3 },
-      { qty: 75, unit: "g", item: "garlic cloves, peeled and crushed", aisle: "Fruit & veg", kcal: 112, protein: 5 },
+      { qty: 2000, unit: "g", item: "tinned tomatoes (4 × 400g tins)", buy: "tinned chopped tomatoes", aisle: "Cupboard", kcal: 360, protein: 18 },
+      { qty: 525, unit: "g", item: "celery stalks, chopped finely", buy: "celery", aisle: "Fruit & veg", kcal: 84, protein: 4 },
+      { qty: 500, unit: "g", item: "carrots, peeled and chopped finely", buy: "carrots", aisle: "Fruit & veg", kcal: 205, protein: 5 },
+      { qty: 300, unit: "g", item: "onion, peeled and chopped finely", buy: "onions", aisle: "Fruit & veg", kcal: 120, protein: 3 },
+      { qty: 75, unit: "g", item: "garlic cloves, peeled and crushed", buy: "garlic", aisle: "Fruit & veg", kcal: 112, protein: 5 },
       { qty: 190, unit: "g", item: "tomato purée", aisle: "Cupboard", kcal: 156, protein: 6 },
       { qty: 310, unit: "ml", item: "dry red wine", aisle: "Cupboard", kcal: 264, protein: 0, staple: true },
-      { qty: 5, unit: "", item: "beef stock cubes, crumbled", aisle: "Cupboard", kcal: 16, protein: 2, staple: true },
+      { qty: 5, unit: "", item: "beef stock cubes, crumbled", buy: "beef stock cubes", aisle: "Cupboard", kcal: 16, protein: 2, staple: true },
       { qty: 5, unit: "tsp", item: "dried oregano", aisle: "Cupboard", kcal: 13, protein: 0, staple: true },
       { qty: 8, unit: "", item: "bay leaves", aisle: "Cupboard", kcal: 5, protein: 0, staple: true },
       { qty: 2.5, unit: "tbsp", item: "Worcestershire sauce", aisle: "Cupboard", kcal: 21, protein: 0, staple: true },
       { qty: 40, unit: "g", item: "fresh basil, finely chopped", aisle: "Fruit & veg", kcal: 9, protein: 1 },
-      { qty: 1, unit: "tsp", item: "salt, to taste", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
-      { qty: 0.5, unit: "tsp", item: "freshly ground black pepper, to taste", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
+      { qty: 1, unit: "tsp", item: "salt, to taste", buy: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 0.5, unit: "tsp", item: "freshly ground black pepper, to taste", buy: "black pepper", aisle: "Cupboard", kcal: 0, protein: 0, staple: true }
     ],
     method: [
       "Put all ingredients (except Worcestershire sauce and fresh basil) into the slow cooker: 1250g beef mince, 2000g tinned tomatoes, 525g celery, 500g carrots, 300g onion, 75g garlic, 190g tomato purée, 310ml red wine, 5 stock cubes, 5 tsp oregano, 8 bay leaves, and salt and pepper to taste.",
@@ -325,11 +327,11 @@ window.RECIPES = [
       // 1 tbsp × 2 = 2 tbsp (28g). Butter ~717 kcal/100g. 28g × 7.17 = 200 kcal
       { qty: 2, unit: "tbsp", item: "butter", aisle: "Dairy & eggs", kcal: 200, protein: 0 },
       // 2 onions × 2 = 4. Matches the chilli recipe (2 onions = 80 kcal, 2g protein). 4 × 40 = 160 kcal, 4g protein
-      { qty: 4, unit: "", item: "onions, diced", aisle: "Fruit & veg", kcal: 160, protein: 4 },
+      { qty: 4, unit: "", item: "onions, diced", buy: "onions", aisle: "Fruit & veg", kcal: 160, protein: 4 },
       // 1 clove × 2 = 2 cloves (~10g). Matches the garlic rate in the chilli recipe (~1.5 kcal/g). 10 × 1.5 = 15 kcal, ~1g protein
-      { qty: 2, unit: "", item: "garlic cloves, thinly sliced", aisle: "Fruit & veg", kcal: 15, protein: 1 },
+      { qty: 2, unit: "", item: "garlic cloves, thinly sliced", buy: "garlic", aisle: "Fruit & veg", kcal: 15, protein: 1 },
       // 2 chillies × 2 = 4. Matches red chilli peppers in the chilli recipe (2 = 40 kcal, 2g protein). 4 × 20 = 80 kcal, 4g protein
-      { qty: 4, unit: "", item: "mild red chillies, deseeded and chopped", aisle: "Fruit & veg", kcal: 80, protein: 4 },
+      { qty: 4, unit: "", item: "mild red chillies, deseeded and chopped", buy: "red chillies", aisle: "Fruit & veg", kcal: 80, protein: 4 },
       // 850ml × 2 = 1700ml. Stock ~2 kcal/100ml. 17 × 2 = 34 kcal, ~0.1g protein/100ml = 2g
       { qty: 1700, unit: "ml", item: "vegetable stock", aisle: "Cupboard", kcal: 34, protein: 2, staple: true },
       // 4 tbsp × 2 = 8 tbsp (~120g, 15g per tbsp). Full-fat crème fraîche ~193 kcal/100g, 2.1g protein/100g. 120g: 232 kcal, 2.5g protein (rounded to 3)
@@ -358,7 +360,7 @@ window.RECIPES = [
       // 1800g. Leeks ~30 kcal/100g, 1.5g protein/100g. 18 × 30 = 540 kcal, 18 × 1.5 = 27g
       { qty: 1800, unit: "g", item: "leeks, washed and sliced", aisle: "Fruit & veg", kcal: 540, protein: 27 },
       // 3 onions. Matches the chilli recipe (2 onions = 80 kcal, 2g protein). 3 × 40 = 120 kcal, 3g protein
-      { qty: 3, unit: "", item: "onions, roughly chopped", aisle: "Fruit & veg", kcal: 120, protein: 3 },
+      { qty: 3, unit: "", item: "onions, roughly chopped", buy: "onions", aisle: "Fruit & veg", kcal: 120, protein: 3 },
       // 1350g. Potatoes ~75 kcal/100g, 2g protein/100g. 13.5 × 75 = 1013 kcal, 13.5 × 2 = 27g
       { qty: 1350, unit: "g", item: "potatoes, cut into 1–2cm cubes", aisle: "Fruit & veg", kcal: 1013, protein: 27 },
       // 3 tsp. Matches the thyme in the ragu (2 tsp = 6 kcal). 3 × 3 = 9 kcal
@@ -370,9 +372,9 @@ window.RECIPES = [
       // ~10g chives (about one pack). Chives ~30 kcal/100g. 10 × 0.3 = 3 kcal
       { qty: 10, unit: "g", item: "fresh chives, chopped", aisle: "Fruit & veg", kcal: 3, protein: 0 },
       // 1 tsp estimate for "season generously". Salt has no calories
-      { qty: 1, unit: "tsp", item: "sea salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
+      { qty: 1, unit: "tsp", item: "sea salt", buy: "salt", aisle: "Cupboard", kcal: 0, protein: 0, staple: true },
       // 1 tsp estimate. Black pepper ~5 kcal/tsp (matches the ragu and chilli recipes)
-      { qty: 1, unit: "tsp", item: "freshly ground black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true }
+      { qty: 1, unit: "tsp", item: "freshly ground black pepper", buy: "black pepper", aisle: "Cupboard", kcal: 5, protein: 0, staple: true }
     ],
     method: [
       "Heat 3 tbsp oil in a large saucepan. Add the 1800g leeks, 3 chopped onions, and 1350g potatoes. Stir well to coat everything and cook for 3–4 minutes.",

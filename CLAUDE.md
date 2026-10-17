@@ -24,7 +24,8 @@ Each recipe has: `id`, `name`, `tag` (Breakfast | Lunch | Dinner | Snack), `emoj
 (optional path in `images/`), `portions`, `storage`, optional `serveWith`, `ingredients`, `method`.
 Each ingredient has: `qty`, `unit` ("g", "ml", "tbsp", "tsp", or "" for a count), `item`, `aisle`
 (Fruit & veg | Meat & fish | Dairy & eggs | Frozen | Cupboard), `kcal` and `protein` for THAT
-quantity, and optional `staple: true`.
+quantity, optional `staple: true`, and optional `buy` (a shopping-list name such as "onions" or "garlic"
+so the same thing merges into one line across recipes; the recipe itself still shows `item`).
 Macros are typical UK supermarket label values; treat them as close estimates. The carb a dinner is
 served with is not included in its macros.
 

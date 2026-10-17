@@ -342,8 +342,11 @@ function shoppingItems() {
   const merged = new Map();
   for (const r of RECIPES.filter(x => state.week.has(x.id))) {
     for (const i of r.ingredients) {
-      const key = (i.item + "|" + i.unit).toLowerCase();
-      if (!merged.has(key)) merged.set(key, { key, item: i.item, unit: i.unit, qty: 0, aisle: i.aisle || "Cupboard", staple: !!i.staple, from: [] });
+      // merge on the shopping name ("buy") if the ingredient has one, e.g. "onions, diced" -> "onions"
+      let name = i.item;
+      if (i.buy) { name = i.buy; }
+      const key = (name + "|" + i.unit).toLowerCase();
+      if (!merged.has(key)) merged.set(key, { key, item: name, unit: i.unit, qty: 0, aisle: i.aisle || "Cupboard", staple: !!i.staple, from: [] });
       const m = merged.get(key);
       m.qty += i.qty;
       m.from.push(r.name);

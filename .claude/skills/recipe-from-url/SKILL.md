@@ -45,11 +45,13 @@ For each ingredient in the original recipe:
 
 5. **Flag staples** with `staple: true` if the ingredient is a cupboard basic you'd expect to have (olive oil, spices, stock cubes, salt). Omit the flag for fresh items or things you'd buy specifically for this recipe.
 
+6. **Add a shopping name (`buy`)** so the ingredient merges with the same thing in other recipes on the shopping list. Check the `buy:` values already in `recipes.js` (e.g. `"onions"`, `"garlic"`, `"salt"`, `"black pepper"`, `"tinned chopped tomatoes"`, `"tomato purée"`, `"passata"`, `"carrots"`, `"celery"`, `"red chillies"`, `"olive oil"`, `"vegetable oil"`, `"beef stock cubes"`). If the new ingredient is the same thing you'd buy, reuse that exact `buy` name, e.g. `item: "red onions, sliced"` is not the same as `"onions"`, but `item: "onions, finely chopped"` is, so it gets `buy: "onions"`. Leave `buy` out when the `item` text already matches what you'd buy (e.g. `item: "olive oil"`). Try to use the same unit as existing entries with that `buy` name (e.g. a count for onions), because lines only merge when the unit matches too.
+
 ## Step 4: Compile the recipe record
 
-Create a JavaScript object matching the schema in [recipes.js:5–22](recipes.js#L5-L22):
+Create a JavaScript object matching the schema in the header comment of [recipes.js](recipes.js#L5-L24):
 
-- **id**: a kebab-case slug (e.g. `"thai-green-curry"`). Check the existing ids in `recipes.js` (currently: `chicken-pesto-pasta`, `beef-chilli`, `protein-overnight-oats`) and ensure no collision.
+- **id**: a kebab-case slug (e.g. `"thai-green-curry"`). Read the existing `id:` values in `recipes.js` and make sure the new one doesn't collide.
 - **name**: the recipe title, in UK English (e.g. "Thai green curry", not "Thai Green Curry" unless that's how it's branded).
 - **tag**: infer from the original recipe and the user's context (usually Breakfast, Lunch, Dinner, or Snack; call out your choice for confirmation if it's unclear).
 - **emoji**: pick one that represents the dish (🍛 for curry, 🥗 for salad, etc.).
